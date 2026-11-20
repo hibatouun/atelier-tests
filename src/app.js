@@ -1,6 +1,10 @@
 const express = require('express');
 const db = require('./db');
 const app = express();
+
+// Désactiver l'en-tête X-Powered-By
+app.disable('x-powered-by');
+
 app.use(express.json());
 app.use(express.static('public'));
 app.get('/users/:id', async (req, res) => {
